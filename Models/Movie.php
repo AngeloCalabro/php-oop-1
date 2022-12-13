@@ -7,7 +7,7 @@ class Movie {
     private $vote;
     private $duration;
     private $description;
-    // private $passedYears;
+    private $passedYears;
     function __construct(String $_title ,Array $_genres ,Int $_pubblicationDate ,Int $_vote, Int $_duration = null, String $_description = null)
     {
         $this->title = $_title;
@@ -17,7 +17,7 @@ class Movie {
         $this->duration = $_duration;
         $this->description = $_description;
 
-        // $this->passedYears = $this->getPassedYears();
+        $this->passedYears = $this->getPassedYears();
     }
     public function getTitle()
     {
@@ -73,11 +73,11 @@ class Movie {
         $this->duration = $_duration;
         return $this;
     }
-    // private function getPassedYears(){
-    //     date_default_timezone_set('Europe/Rome'); 
-    //     $currentYear =  date("Y");
-    //     return $currentYear - $this->pubblicationDate;
-    // }
+    private function getPassedYears(){
+        date_default_timezone_set('Europe/Rome'); 
+        $currentYear =  date("Y");
+        return $currentYear - $this->pubblicationDate;
+    }
 }
 
 ?>
